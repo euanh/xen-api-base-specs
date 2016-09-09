@@ -2,8 +2,8 @@
 # executed. The build system has /usr/sbin first in the path which leads to permission
 # problems.
 PATH:=/usr/bin:$(PATH)
-FETCH_EXTRA_FLAGS=--mirror file:///distfiles/ocaml2
-RPM_EXTRA_DEFINES=--define "_sourcedir %_topdir/SOURCES/%name"
+export MOCK=planex-cache --cachedirs=/rpmcache
+export FETCH_EXTRA_FLAGS=--mirror file:///distfiles/ocaml2
 
 .PHONY: buildrpms ocaml
 
