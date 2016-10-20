@@ -7,4 +7,4 @@ before_install:
 - docker pull xenserver/planex:release-v0.10.0
 
 script:
-- docker run --privileged --rm -t -v ${PWD}:/build xenserver/planex:release-v0.10.0 make
+- docker run --privileged --rm -t -v ${PWD}:/build xenserver/planex:release-v0.10.0 make -f Makefile.travis
