@@ -3,6 +3,9 @@
 # problems.
 PATH:=/usr/bin:$(PATH)
 export MOCK=planex-cache --cachedirs=/rpmcache
+export MOCK_FLAGS ?= --configdir=mock.xsbuild \
+              --resultdir=$(dir $@) --uniqueext=$(notdir $@) \
+              --disable-plugin=package_state
 export FETCH_EXTRA_FLAGS=--mirror file:///distfiles/ocaml2
 
 .PHONY: buildrpms ocaml
